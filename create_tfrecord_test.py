@@ -1,5 +1,5 @@
 
-# This script creates TFRecord files for training data set.
+# This script creates TFRecord files for the testing data set.
 
 import tensorflow as tf
 import cv2
