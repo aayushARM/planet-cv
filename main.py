@@ -29,7 +29,7 @@ def main():
                                                   save_best_only=True, mode='max')
 
     tensorboard_callback = tfk.callbacks.TensorBoard(
-        log_dir='/media/aayush/Other/Planet/densenet121_logs',
+        log_dir='/media/aayush/Other/Planet/SEResNet154_logs',
         histogram_freq=0, batch_size=batch_size, write_graph=True,
         write_grads=True, update_freq='batch')
 
