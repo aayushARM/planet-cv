@@ -6,6 +6,7 @@ import seresnet
 from f2metric import f_score
 
 def main():
+    # Some hyper params, tuned multple times as needed.
     batch_size = 24
     total_samples = 40479
     train_batches = int(total_samples * 0.8 / batch_size)
