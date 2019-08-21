@@ -1,5 +1,6 @@
 '''
-Squeeze-and-Excitation ResNets
+Squeeze-and-Excitation ResNet implemetation from https://github.com/titu1994/keras-squeeze-excite-network. 
+This has been modified at several places to suit the needs of this project.
 
 References:
     - [Deep Residual Learning for Image Recognition](https://arxiv.org/abs/1512.03385)
@@ -135,90 +136,6 @@ def SEResNet(input_shape=None,
     # load weights
 
     return model
-
-
-def SEResNet18(input_shape=None,
-               width=1,
-               bottleneck=False,
-               weight_decay=1e-4,
-               include_top=True,
-               weights=None,
-               input_tensor=None,
-               pooling=None,
-               classes=1000):
-    return SEResNet(input_shape,
-                    depth=[2, 2, 2, 2],
-                    width=width,
-                    bottleneck=bottleneck,
-                    weight_decay=weight_decay,
-                    include_top=include_top,
-                    weights=weights,
-                    input_tensor=input_tensor,
-                    pooling=pooling,
-                    classes=classes)
-
-
-def SEResNet34(input_shape=None,
-               width=1,
-               bottleneck=False,
-               weight_decay=1e-4,
-               include_top=True,
-               weights=None,
-               input_tensor=None,
-               pooling=None,
-               classes=1000):
-    return SEResNet(input_shape,
-                    depth=[3, 4, 6, 3],
-                    width=width,
-                    bottleneck=bottleneck,
-                    weight_decay=weight_decay,
-                    include_top=include_top,
-                    weights=weights,
-                    input_tensor=input_tensor,
-                    pooling=pooling,
-                    classes=classes)
-
-
-def SEResNet50(input_shape=None,
-               width=1,
-               bottleneck=True,
-               weight_decay=1e-4,
-               include_top=True,
-               weights=None,
-               input_tensor=None,
-               pooling=None,
-               classes=1000):
-    return SEResNet(input_shape,
-                    width=width,
-                    bottleneck=bottleneck,
-                    weight_decay=weight_decay,
-                    include_top=include_top,
-                    weights=weights,
-                    input_tensor=input_tensor,
-                    pooling=pooling,
-                    classes=classes)
-
-
-def SEResNet101(input_shape=None,
-                width=1,
-                bottleneck=True,
-                weight_decay=1e-4,
-                include_top=True,
-                weights=None,
-                input_tensor=None,
-                pooling=None,
-                classes=1000):
-    return SEResNet(input_shape,
-                    depth=[3, 6, 23, 3],
-                    width=width,
-                    bottleneck=bottleneck,
-                    weight_decay=weight_decay,
-                    include_top=include_top,
-                    weights=weights,
-                    input_tensor=input_tensor,
-                    pooling=pooling,
-                    classes=classes)
-
 
 def SEResNet154(input_shape=None,
                 width=1,
