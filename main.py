@@ -14,6 +14,7 @@ def main():
     num_shards = 4
     shuffle_buffer_size = 6000
     learning_rate = 0.0001
+    # Change below paths as needed.
     checkpoint_path = '/media/aayush/Other/Planet/SEResnet154_ckpts/weights'
     files = tf.data.Dataset.list_files('/media/aayush/Other/Planet/tfrecords/train/*.tfrecord')
     # TPU_WORKER = 'grpc://' + os.environ['COLAB_TPU_ADDR']
