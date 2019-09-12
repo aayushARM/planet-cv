@@ -1,6 +1,7 @@
 
 import tensorflow as tf
 
+# Enable eager mode for easy debugging.
 tf.enable_eager_execution()
 train_samples = int(0.8*40479)
 feature_dict = {'image_string': tf.FixedLenFeature([], tf.string),
@@ -33,7 +34,8 @@ def get_data(files, batch_size, num_shards, shuffle_buffer_size):
 
     train_data = train_data.prefetch(1)
     val_data = val_data.prefetch(1)
-
+    
+    # For debugging.
     # count = 0
     # for (_, one_hot1), (_, one_hot2) in zip(train_data, val_data):
     #     print(repr(one_hot1))
