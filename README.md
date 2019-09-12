@@ -4,4 +4,4 @@ Implementation of a Mulitlabel, Multiclass classification task using Squeeze-an-
 * Project Poster: [link](https://github.com/aayushARM/planet-cv/blob/master/Poster.pdf)
 * Project Report: [link](https://github.com/aayushARM/planet-cv/blob/master/CVReport_Aayush.pdf)
 
-Reference for SEResNet154 Keras implementation: https://github.com/titu1994/keras-squeeze-excite-network
+Reference for SEResNet Keras implementation, which was used as a base and modified for this project: https://github.com/titu1994/keras-squeeze-excite-network
