@@ -13,6 +13,9 @@ def parse_and_augment(proto_record):
     # already normalized
     image_flat = tf.decode_raw(features['image_string'], tf.float32)
     image = tf.reshape(image_flat, [256, 256, 4])
+    # Flipping satellite chips/images in any of the four directions doesn't change the labels,
+    # and also provides good data augmentation. Note that by default both functions below flip 
+    # with a probability=0.5.
     image = tf.image.random_flip_left_right(image)
     image = tf.image.random_flip_up_down(image)
     one_hot = tf.decode_raw(features['one_hot_string'], tf.uint8)
@@ -35,7 +38,7 @@ def get_data(files, batch_size, num_shards, shuffle_buffer_size):
     train_data = train_data.prefetch(1)
     val_data = val_data.prefetch(1)
     
-    # For debugging.
+    # For debugging:
     # count = 0
     # for (_, one_hot1), (_, one_hot2) in zip(train_data, val_data):
     #     print(repr(one_hot1))
