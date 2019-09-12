@@ -23,9 +23,12 @@ def main():
 
     model = seresnet.SEResNet154(input_shape=(256, 256, 4), classes=17)
     #print(model.summary())
+    
+    # Note that we're using a custom metric(f2-score) during model compilation.
     model.compile(optimizer=tfk.optimizers.Adam(lr=learning_rate), loss='mean_squared_error',
                   metrics=[f_score])
-
+    
+    # Similar as  above, we're monitoring a custom f2-score for validation in the Checkpoint callback.
     ckpt_callback = tfk.callbacks.ModelCheckpoint(checkpoint_path, save_weights_only=True, verbose=1,
                                                   monitor='val_f_score',
                                                   save_best_only=True, mode='max')
@@ -44,6 +47,5 @@ def main():
               callbacks=[tensorboard_callback, ckpt_callback], initial_epoch=0, validation_freq=1)
 
     #model.evaluate(val_data, steps=50, verbose=2, workers=4, use_multiprocessing=True)
-
 
 main()
