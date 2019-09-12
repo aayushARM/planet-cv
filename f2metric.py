@@ -1,4 +1,5 @@
-# This file consists of code related to f2 score evaluation.
+# This file consists of code related to f2 score computation. Since implemented as Tensorflow nodes, this score acts as a part 
+# of training graph and is differentiable during backpropogation just like other graph nodes.
 
 from tensorflow.python.keras import backend as K
 import tensorflow as tf
